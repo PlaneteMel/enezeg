@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INIZI — ENEZEG</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #050505;
+color: #ffffff;
+}
+h1, h2, h3, h4, .brand-font {
+font-family: 'Syne', sans-serif;
+}
+.dropdown:hover .dropdown-menu {
+display: block;
+}
+</style>
+</head>
+<body class="antialiased selection:bg-fuchsia-500 selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 left-0 border-b border-white/10 bg-black/60 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="brand-font text-2xl font-bold tracking-tighter text-white">
+                ENEZEG
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-300">
+                <div class="relative dropdown">
+                    <a href="index.html#archipel" class="hover:text-white transition-colors flex items-center gap-1">
+                        L'Archipel
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xs"></iconify-icon>
+                    </a>
+                    <div class="dropdown-menu absolute top-full left-0 pt-2 w-60 hidden">
+                        <div class="bg-neutral-900 border border-white/10 rounded-xl backdrop-blur-xl shadow-xl overflow-hidden">
+                            <a href="projet-korkol.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors">Projet Korkol</a>
+                            <a href="la-poesie-des-vivants.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">La Poésie des Vivants</a>
+                            <a href="inizi.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">INIZI</a>
+                            <a href="ateliers.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">Les Ateliers</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#galerie" class="hover:text-white transition-colors">Galerie</a>
+                <a href="index.html#evenements" class="hover:text-white transition-colors">Événements</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <a href="https://www.helloasso.com/associations/compagnie-enezeg/formulaires/2" target="_blank" class="bg-pink-500 text-black text-xs font-semibold py-2 px-4 rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2">
+                <iconify-icon icon="solar:heart-linear" class="text-base"></iconify-icon>
+                Faire un don
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/Photo le Kleub Folk.jpg" alt="INIZI" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-[#050505]/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-fuchsia-900/30 to-pink-900/30 mix-blend-overlay"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 mt-16">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400">INIZI</h1>
+            <p class="mt-5 brand-font text-xl md:text-2xl font-semibold text-white/80">Bal électrofolk · Dj set techno boum</p>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="max-w-2xl mx-auto px-6 py-24">
+        <div class="relative">
+            <div class="bg-gradient-to-br from-fuchsia-950/40 via-neutral-950/80 to-pink-950/40 border border-fuchsia-500/20 rounded-2xl p-6 md:p-8 text-xl md:text-2xl leading-relaxed text-neutral-100 text-justify brand-font font-semibold space-y-6">
+                <p>Quand elle était petite, <span class="text-fuchsia-400">Inizi était danseuse.</span></p>
+                <p>Maintenant qu'elle est grande, elle est toujours danseuse mais aussi <span class="text-fuchsia-400">dj.</span></p>
+                <p>Ses passions : <span class="text-fuchsia-400">le bal folk, la macarena, les paillettes et le rose.</span></p>
+                <p class="text-fuchsia-300">Alors elle a mélangé tout ça et deux projets ont vu le jour…</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Le Kleub Folk -->
+    <section class="max-w-4xl mx-auto px-6 pb-20">
+        <h2 class="brand-font text-4xl md:text-5xl font-bold text-fuchsia-400 mb-2">Le Kleub Folk</h2>
+        <p class="text-purple-400 italic text-xl md:text-2xl mb-10">Bal électro pour folk furieux.ses</p>
+
+        <div class="relative h-40 md:h-52 w-full overflow-hidden rounded-2xl mb-10">
+            <img src="images/Le Kleub Folk.jpg" alt="Le Kleub Folk" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-[#050505]/20"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-fuchsia-900/30 to-pink-900/30 mix-blend-overlay"></div>
+        </div>
+
+        <div class="text-xl md:text-2xl leading-snug space-y-6 brand-font font-semibold">
+            <p class="text-justify text-neutral-100">
+                C'est la rencontre entre le bal folk et le club de techno, la tradition et le nouveau,
+                les danses bretonnes et les kicks électro. Équipée de ses super platines de dj, Inizi renversera
+                ton cœur et tes pieds avec des chapelloises techno, des mazurka dubstep et du rondeau house !
+            </p>
+            <p class="text-justify text-neutral-300">
+                Une initiation aux danses traditionnelles est possible en amont du dj set, pour être bien dans ses
+                baskets-claquettes-chaussettes.
+            </p>
+            <p class="pt-2">
+                <a href="../contenu/INIZI/Le Kleub Folk - Dossier de présentation.pdf" target="_blank" class="text-fuchsia-400 hover:text-fuchsia-300 hover:underline transition-colors font-medium uppercase tracking-wider">
+                    &raquo; TÉLÉCHARGER LE DOSSIER DE PRÉSENTATION &laquo;
+                </a>
+            </p>
+            <div class="bg-neutral-900/60 border border-white/10 rounded-xl p-6">
+                <h3 class="text-fuchsia-400 font-semibold text-sm uppercase tracking-widest mb-3">Highlights</h3>
+                <ul class="italic text-neutral-300 space-y-1 list-disc list-inside">
+                    <li>Teknibal 2025</li>
+                    <li>Le Gros Bal du Vercors 2025</li>
+                    <li>Festiv'arts 2025 - 2026</li>
+                    <li>Bal Tempête 2026</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="max-w-3xl mx-auto px-6"><div class="h-px bg-gradient-to-r from-transparent via-fuchsia-500/40 to-transparent"></div></div>
+
+    <!-- Inizi Party -->
+    <section class="max-w-4xl mx-auto px-6 py-20">
+        <h2 class="brand-font text-4xl md:text-5xl font-bold text-fuchsia-400 mb-2">Inizi Party</h2>
+        <p class="text-purple-400 italic text-xl md:text-2xl mb-10">Dj set techno boum</p>
+
+        <div class="relative h-40 md:h-52 w-full overflow-hidden rounded-2xl mb-10">
+            <img src="images/Inizi PArty 2.jpg" alt="Inizi Party" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-[#050505]/20"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-fuchsia-900/30 to-pink-900/30 mix-blend-overlay"></div>
+        </div>
+
+        <div class="text-xl md:text-2xl leading-snug space-y-6 brand-font font-semibold">
+            <p class="text-justify text-neutral-100">
+                Prenez un saladier. Mettez-y une dj à paillettes et ajoutez trois cuillères de gros kicks techno,
+                un pot d'huile de basshouse et une pincée d'eurodance.
+            </p>
+            <p class="text-justify text-neutral-300">
+                Mélangez trois fois dans le sens inverse des aiguilles d'une montre puis incorporez délicatement
+                et conjointement l'esprit de la danse et celui du fun, quelques pépites de groove et ne laissez
+                rien reposer du tout.
+            </p>
+            <p class="text-justify text-neutral-300">
+                Twerkez, puis mettez le tout dans un pot. Secouez-le comme si c'était une maracas. Ouvrez, étalez
+                sur une grosse tartine de kiff, sortez la boule à facette : bravo, vous avez un dancefloor tout chaud.
+            </p>
+            <p class="pt-2">
+                <a href="https://soundcloud.com/inizi-770916379/pasteques-paillettes-drop-de-bh?si=4d03a9d887d84c93b28faaf4d6962051&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" rel="noopener noreferrer" class="text-fuchsia-400 hover:text-fuchsia-300 hover:underline transition-colors font-medium uppercase tracking-wider">
+                    &raquo; ÉCOUTER UN MIX &laquo;
+                </a>
+            </p>
+            <div class="bg-neutral-900/60 border border-white/10 rounded-xl p-6">
+                <h3 class="text-fuchsia-400 font-semibold text-sm uppercase tracking-widest mb-3">Highlights</h3>
+                <ul class="italic text-neutral-300 space-y-1 list-disc list-inside">
+                    <li>Hadra Trance Festival 2025</li>
+                    <li>Reperkusound Openair 2026</li>
+                    <li>Les Frigos 2026</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contact -->
+    <section class="relative h-[50vh] min-h-[400px] w-full overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="images/Inizi 3.jpg" alt="INIZI" class="w-full h-full object-cover opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-[#050505]/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-fuchsia-900/30 to-pink-900/30 mix-blend-overlay"></div>
+        </div>
+        <div class="relative z-10 text-center px-6">
+            <h2 class="brand-font text-4xl md:text-6xl font-bold text-white mb-8">Programmer un bal ou une boum</h2>
+            <a href="mailto:inizi.music@gmail.com" class="inline-flex items-center gap-2 px-8 py-4 bg-fuchsia-600 text-white font-semibold rounded-full hover:bg-fuchsia-500 transition-colors hover:shadow-[0_0_40px_rgba(217,70,239,0.6)]">
+                <iconify-icon icon="solar:letter-linear" class="text-xl"></iconify-icon>
+                inizi.music@gmail.com
+            </a>
+        </div>
+    </section>
+    </section>
+
+        <!-- Footer -->
+    <footer class="border-t border-white/10 bg-neutral-950 py-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-neutral-400">
+                &copy; 2026 Compagnie ENEZEG
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/cie_enezeg/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="mdi:instagram" class="text-xl"></iconify-icon>
+                </a>
+                <a href="https://www.facebook.com/cie.enezeg/?locale=fr_FR" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="mdi:facebook" class="text-xl"></iconify-icon>
+                </a>
+                <a href="mailto:cie.enezeg@gmail.com" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="solar:letter-linear" class="text-xl"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

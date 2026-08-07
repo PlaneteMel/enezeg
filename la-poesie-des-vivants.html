@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Poésie des Vivants — ENEZEG</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #050505;
+color: #ffffff;
+}
+h1, h2, h3, h4, .brand-font {
+font-family: 'Syne', sans-serif;
+}
+.text-glow {
+text-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+}
+.neon-border {
+box-shadow: 0 0 10px rgba(236, 72, 153, 0.2), inset 0 0 10px rgba(236, 72, 153, 0.1);
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+@keyframes marquee {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+display: inline-flex;
+animation: marquee 20s linear infinite;
+}
+input[type="email"], input[type="text"] {
+background: rgba(255,255,255,0.05);
+border: 1px solid rgba(255,255,255,0.1);
+color: white;
+outline: none;
+}
+input[type="email"]:focus, input[type="text"]:focus {
+                border-color: #ec4899;
+                box-shadow: 0 0 0 1px #ec4899;
+            }
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+            </style>
+</head>
+<body class="antialiased selection:bg-pink-500 selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 left-0 border-b border-white/10 bg-black/60 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="brand-font text-2xl font-bold tracking-tighter text-white">
+                ENEZEG
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-300">
+                <div class="relative dropdown">
+                    <a href="index.html#archipel" class="hover:text-white transition-colors flex items-center gap-1">
+                        L'Archipel
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xs"></iconify-icon>
+                    </a>
+                    <div class="dropdown-menu absolute top-full left-0 pt-2 w-60 hidden">
+                        <div class="bg-neutral-900 border border-white/10 rounded-xl backdrop-blur-xl shadow-xl overflow-hidden">
+                            <a href="projet-korkol.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors">Projet Korkol</a>
+                            <a href="la-poesie-des-vivants.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">La Poésie des Vivants</a>
+                            <a href="inizi.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">INIZI</a>
+                            <a href="ateliers.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">Les Ateliers</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#galerie" class="hover:text-white transition-colors">Galerie</a>
+                <a href="index.html#evenements" class="hover:text-white transition-colors">Événements</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <a href="https://www.helloasso.com/associations/compagnie-enezeg/formulaires/2" target="_blank" class="bg-pink-500 text-black text-xs font-semibold py-2 px-4 rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2">
+                <iconify-icon icon="solar:heart-linear" class="text-base"></iconify-icon>
+                Faire un don
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/LPDV 1.jpg" alt="La Poésie des Vivants" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-[#050505]/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-pink-900/30 to-purple-900/30 mix-blend-overlay"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 mt-16">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400">La Poésie des Vivants</h1>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section id="projet" class="max-w-2xl mx-auto px-6 py-24">
+        <div class="bg-gradient-to-br from-pink-950/40 via-neutral-950/80 to-purple-950/40 border border-pink-500/20 rounded-2xl p-6 md:p-8 text-xl md:text-2xl leading-relaxed text-neutral-100 text-justify brand-font font-semibold space-y-6">
+            <p>La Poésie des Vivants s'écrit au creux de nos os, sur les feuilles des arbres, dans les cœurs déchirés et sur les poussières d'étoiles.</p>
+            <p>La Poésie des Vivants se murmure et s'offre, s'attrape en plein vol, se hurle ou se danse, s'efface en cabrioles.</p>
+            <p>La Poésie des Vivants pour remettre du sang et des battements d'être dans des vagues de rimes, de proses et de peut-être.</p>
+        </div>
+    </section>
+
+    <!-- Création(s) -->
+    <section class="max-w-4xl mx-auto px-6 pb-20">
+        <h2 class="brand-font text-4xl md:text-5xl font-bold text-purple-400 mb-10">CREATION(S)</h2>
+
+        <div class="text-xl md:text-2xl leading-snug space-y-4 brand-font font-semibold">
+
+            <!-- D.CAD -->
+            <h3 class="brand-font text-3xl md:text-4xl font-bold text-pink-400">D.CAD</h3>
+            <p class="text-purple-400 italic text-lg md:text-xl">Solo de poésie dansée — spectacle chez l'habitant et petits lieux intimistes — en tournée</p>
+
+            <div class="relative h-40 md:h-52 w-full overflow-hidden rounded-2xl mt-4">
+                <img src="images/D.CAD.jpg" alt="D.CAD" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-[#050505]/20"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-pink-900/30 to-purple-900/30 mix-blend-overlay"></div>
+            </div>
+            <p class="text-justify text-base text-neutral-400 italic pt-4">
+                &laquo; Je suis un passage. Entre hier et demain, entre la nuit et les autres nuits, entre toi… et nous. &raquo;
+            </p>
+            <p class="text-justify text-neutral-300">
+                Une voix, un corps, une chaise et une valise. C'est tout ce qu'il faudra à D.CAD pour naître, encore et encore, sous les yeux et les oreilles curieuses de celles et ceux qui l'accueillent.
+            </p>
+            <p class="text-justify text-neutral-300">
+                Récit en prose de moments de vie bouleversés, retournés ou émerveillés, D.CAD susurre à l'existence quelques paroles-poussières qui peut-être ne changeront rien. Mais si le cœur les écoutent, alors…
+            </p>
+            <p class="text-base text-neutral-400 pt-2">Durée : 1h</p>
+            <p class="text-base text-neutral-400">Autrice & interprète : Mélisande Pommier-Ferri</p>
+            <p class="pt-2">
+                <a href="../contenu/LA POESIE DES VIVANTS/D.CAD - Dossier de présentation.pdf" target="_blank" class="text-pink-400 hover:text-pink-300 hover:underline transition-colors font-medium uppercase tracking-wider">
+                    &raquo; télécharger le dossier &laquo;
+                </a>
+             </p>
+
+            <div class="max-w-3xl mx-auto px-6 pt-8"><div class="h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent"></div></div>
+
+            <!-- De Mes Terres -->
+            <h3 class="brand-font text-3xl md:text-4xl font-bold text-pink-400 pt-10">De Mes Terres</h3>
+            <p class="text-purple-400 italic text-lg md:text-xl">Seule en scène de poésie dansée pour brin d'herbe et grandes scènes de théâtres — en création</p>
+            <p class="text-purple-400 italic text-base md:text-lg">Première à l'Espace Michel Crépeau — Nieul-sur-Mer (17) — le 9 octobre 2027</p>
+
+            <div class="relative h-40 md:h-52 w-full overflow-hidden rounded-2xl mt-4">
+                <img src="images/De Mes Terres 2.png" alt="De Mes Terres" class="w-full h-full object-cover object-top">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-[#050505]/20"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-pink-900/30 to-purple-900/30 mix-blend-overlay"></div>
+            </div>
+            <p class="text-justify text-base text-neutral-400 italic pt-4">
+                &laquo; Le vent s'est levé, encore une fois, pour souffler sur mes terres et me parler de toi. Il a dit ton nom dans une langue étrangère, que seul mon sang connaissait : je ne le dirai pas. &raquo;
+            </p>
+            <p class="text-justify text-neutral-300">
+                Tomber dans la vie et ses grands bras de tumultes. Danser, hurler, se mouvoir et se tordre, devenir arbre et corps-écorce. Retrouver le sens des racines et de l'humus, parler à la nuit. Vivre. Vivre.
+            </p>
+            <p class="text-justify text-neutral-300">
+                De Mes Terres est une ode au vivant, à la pulse, au cœur rempli et vide mais qui bat, toujours. Une ode dansée-déclamée, pour une danseuse, trois micros et quelques branches, pour une poignée de terre et une forêt de poèmes.
+            </p>
+            <p class="text-base text-neutral-400 pt-2">Durée : 1h</p>
+            <p class="text-base text-neutral-400">Autrice & interprète : Mélisande Pommier-Ferri</p>
+            <p class="text-base text-neutral-400">Technique son & lumière : Florian Golgevit</p>
+            <p class="pt-2">
+                <a href="../contenu/LA POESIE DES VIVANTS/Dossier de présentation - De Mes Terres - Cie ENEZEG.pdf" target="_blank" class="text-pink-400 hover:text-pink-300 hover:underline transition-colors font-medium uppercase tracking-wider">
+                    &raquo; télécharger le dossier &laquo;
+                </a>
+             </p>
+
+            <div class="max-w-3xl mx-auto px-6 pt-8"><div class="h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent"></div></div>
+
+            <!-- BLOOM -->
+            <h3 class="brand-font text-3xl md:text-4xl font-bold text-pink-400 pt-10">BLOOM</h3>
+            <p class="text-purple-400 italic text-lg md:text-xl">Court métrage chorégraphique en nature sans peinture — en création</p>
+            <p class="text-purple-400 italic text-base md:text-lg">Sortie prévue en 2027</p>
+
+            <div class="relative h-40 md:h-52 w-full overflow-hidden rounded-2xl mt-4">
+                <img src="images/BLOOM 2.jpeg" alt="BLOOM" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-[#050505]/20"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-pink-900/30 to-purple-900/30 mix-blend-overlay"></div>
+            </div>
+            <p class="text-justify text-base text-neutral-400 italic pt-4">
+                &laquo; Pose-toi des questions, qu'elles soient bonnes ou mauvaises. Offre-toi des réponses, mais ne donne pas de sens à ce qui n'en a pas. &raquo;
+            </p>
+            <p class="text-justify text-neutral-300">
+                BLOOM fut initialement une performance pluridisciplinaire. Mais, comme la graine qui germe au fond du crâne, BLOOM deviendra une idée, une pensée : un film.
+            </p>
+            <p class="text-justify text-neutral-300">
+                Mûrir, Fleurir et Mourir. Se rappeler que d'une existence je suis l'expérience. Danser, danser, danser.
+            </p>
+            <p class="text-base text-neutral-400 pt-2">Durée : 20 minutes</p>
+            <p class="text-base text-neutral-400">Autrice & chorégraphe : Mélisande Pommier-Ferri</p>
+            <p class="text-base text-neutral-400">Interprètes : Aurora Cavazzin, Corentin Asproni, Boris Gallet, Florian Guette, Emmy Doucoure</p>
+            <p class="text-base text-neutral-400">Musique : Yoan Richard</p>
+            <p class="text-base text-neutral-400">Réalisation : Hosanna Gartner</p>
+            <p class="pt-2">
+                <a href="../contenu/LA POESIE DES VIVANTS/Dossier de présentation - BLOOM.pdf" target="_blank" class="text-pink-400 hover:text-pink-300 hover:underline transition-colors font-medium uppercase tracking-wider">
+                    &raquo; télécharger le dossier &laquo;
+                </a>
+             </p>
+
+            <div class="max-w-3xl mx-auto px-6 pt-8"><div class="h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent"></div></div>
+
+            <!-- Ateliers -->
+            <div class="pt-6">
+                <div class="bg-gradient-to-br from-pink-950/40 via-neutral-950/80 to-purple-950/40 border border-pink-500/20 rounded-2xl p-8 md:p-10 space-y-6">
+                    <div>
+                        <h4 class="brand-font text-xl font-bold text-pink-400 mb-3">Ateliers d'écriture</h4>
+                        <p class="text-base text-neutral-300">
+                            En parallèle des créations, Mélisande propose des ateliers mêlant écriture et mouvement pour
+                            explorer la poésie par le corps et les mots.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 text-base">
+                        <p class="font-semibold text-pink-300">Mots et Mouvements</p>
+                        <p class="text-neutral-400">
+                            Atelier d'écriture de 3h, inspiré du spectacle D.CAD. Jeux et exercices
+                            d'écriture, expérimentations dansées, pour un voyage créatif accessible
+                            à toutes et tous.
+                        </p>
+                        <p class="font-semibold text-pink-300 pt-2">Plan P.</p>
+                        <p class="text-neutral-400">
+                            Dispositif de poésie participative en espace public &mdash; lien vers le site internet à venir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tournée -->
+            <div class="pt-6">
+                <div class="bg-gradient-to-br from-pink-950/40 via-neutral-950/80 to-purple-950/40 border border-pink-500/20 rounded-2xl p-8 md:p-10">
+                    <h4 class="brand-font text-xl font-bold text-pink-400 mb-3">La Poésie des Vivants en tournée</h4>
+                    <ul class="text-base text-neutral-400 space-y-1">
+                        <li><span class="font-semibold text-neutral-200">9 octobre 2027</span> · Première de De Mes Terres — Espace Michel Crépeau, Nieul-sur-Mer (17)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section: Contact -->
+    <section class="relative h-[50vh] min-h-[400px] w-full overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="images/Hadra-385.JPG" alt="La Poésie des Vivants" class="w-full h-full object-cover opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-[#050505]/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-pink-900/30 to-purple-900/30 mix-blend-overlay"></div>
+        </div>
+        <div class="relative z-10 text-center px-6">
+            <h2 class="brand-font text-4xl md:text-6xl font-bold text-white mb-8">Programmer un spectacle et/ou un atelier</h2>
+            <a href="mailto:cie.enezeg@gmail.com" class="inline-flex items-center gap-2 px-8 py-4 bg-pink-600 text-white font-semibold rounded-full hover:bg-pink-500 transition-colors hover:shadow-[0_0_40px_rgba(236,72,153,0.6)]">
+                <iconify-icon icon="solar:letter-linear" class="text-xl"></iconify-icon>
+                cie.enezeg@gmail.com
+            </a>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer class="border-t border-white/10 bg-neutral-950 py-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-neutral-400">
+                &copy; 2026 Compagnie ENEZEG
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/cie_enezeg/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="mdi:instagram" class="text-xl"></iconify-icon>
+                </a>
+                <a href="https://www.facebook.com/cie.enezeg/?locale=fr_FR" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="mdi:facebook" class="text-xl"></iconify-icon>
+                </a>
+                <a href="mailto:cie.enezeg@gmail.com" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="solar:letter-linear" class="text-xl"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

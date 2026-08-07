@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENEZEG — Compagnie de danse</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #050505;
+color: #ffffff;
+}
+h1, h2, h3, h4, .brand-font {
+font-family: 'Syne', sans-serif;
+}
+@keyframes marquee {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+display: inline-flex;
+animation: marquee 20s linear infinite;
+}
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    .dropdown:hover .dropdown-menu {
+    display: block;
+    }
+    .leaflet-tile { filter: invert(0.9) hue-rotate(180deg) saturate(0.3) brightness(0.8) contrast(1.1); }
+    .leaflet-popup-content-wrapper { background: rgba(23,23,23,0.85) !important; color: #fff !important; border-radius: 12px !important; border: 1px solid #262626 !important; }
+    .leaflet-popup-tip { background: rgba(23,23,23,0.85) !important; }
+
+</style>
+</head>
+<body class="antialiased selection:bg-pink-500 selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 left-0 border-b border-white/10 bg-black/60 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="brand-font text-2xl font-bold tracking-tighter text-white">
+                ENEZEG
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-300">
+                <div class="relative dropdown">
+                    <a href="#archipel" class="hover:text-white transition-colors flex items-center gap-1">
+                        L'Archipel
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xs"></iconify-icon>
+                    </a>
+                    <div class="dropdown-menu absolute top-full left-0 pt-2 w-60 hidden">
+                        <div class="bg-neutral-900 border border-white/10 rounded-xl backdrop-blur-xl shadow-xl overflow-hidden">
+                            <a href="projet-korkol.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors">Projet Korkol</a>
+                            <a href="la-poesie-des-vivants.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">La Poésie des Vivants</a>
+                            <a href="inizi.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">INIZI</a>
+                            <a href="ateliers.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">Les Ateliers</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#galerie" class="hover:text-white transition-colors">Galerie</a>
+                <a href="#evenements" class="hover:text-white transition-colors">Événements</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <a href="https://www.helloasso.com/associations/compagnie-enezeg/formulaires/2" target="_blank" class="bg-pink-500 text-black text-xs font-semibold py-2 px-4 rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2">
+                <iconify-icon icon="solar:heart-linear" class="text-base"></iconify-icon>
+                Faire un don
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Photo Banner -->
+    <div class="w-full h-[35vh] md:h-[45vh] overflow-hidden relative">
+        <img src="images/ACCUEIL.jpg" alt="ENEZEG" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent"></div>
+    </div>
+
+    <!-- Hero Title -->
+    <section class="py-16 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400 mb-10">
+                ENEZEG
+            </h1>
+            <div class="max-w-2xl mx-auto">
+            <p class="brand-font text-xl md:text-2xl font-semibold text-neutral-100 leading-snug text-justify">
+                Archipel <span class="text-purple-500 [text-shadow:0_0_12px_rgba(168,85,247,0.8)]">sensible et coloré</span>, allant du bal folk à la boum en passant par la poésie. Entrelacs de mondes aux kicks chaloupés, aux plumes libérées et aux <span class="text-purple-500 [text-shadow:0_0_12px_rgba(168,85,247,0.8)]">danses élargies</span>. ENEZEG nous invite à <span class="text-purple-500 [text-shadow:0_0_12px_rgba(168,85,247,0.8)]">groover</span> sur le fil de l'existence et à densifier la vie.
+            </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="h-16 md:h-24"></div>
+
+    <!-- Marquee -->
+    <div class="w-full bg-pink-600 overflow-hidden py-5 border-y border-pink-400/30">
+        <div class="animate-marquee whitespace-nowrap">
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+            <span class="text-xl md:text-2xl font-bold tracking-tight uppercase text-black">DANSER - FAIRE DANSER - </span>
+        </div>
+    </div>
+
+    <div class="h-16 md:h-24"></div>
+
+    <!-- L'Archipel -->
+    <section id="archipel" class="py-24">
+        <div class="max-w-7xl mx-auto px-6 mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-10">L'ARCHIPEL</h2>
+            <div>
+                <p class="brand-font text-xl md:text-2xl font-semibold text-neutral-100 leading-snug text-justify mb-6">
+                    ENEZEG sort tout droit d'un rêve : celui de faire de la vie un grand bal multicolore, sauce paillettes et goût poésie. Ce rêve a pris forme en 2024 sous l'impulsion de Mélisande Pommier-Ferri, tête, cœur et corps de la compagnie.
+                </p>
+                <p class="brand-font text-xl md:text-2xl font-semibold text-neutral-100 leading-snug text-justify mb-6">
+                    Elle y a mis tout ce qu'elle aime : de la danse contempo-folklo-folle, du bal électro-boumesque, des textes poétiques à en faire pleurer les montagnes, des humain.e.s très très super, du spectacle variable et participable, du dj set techno-twerké, des licornes en plastique et des vraies fausses fleurs.
+                </p>
+                <p class="brand-font text-xl md:text-2xl font-semibold text-neutral-100 leading-snug text-justify mb-6">
+                    <span class="text-purple-500 uppercase [text-shadow:0_0_12px_rgba(168,85,247,0.8)]">TOUT ÇA, OUI OUI.</span>
+                </p>
+                <p class="brand-font text-xl md:text-2xl font-semibold text-neutral-100 leading-snug text-justify mb-6">
+                    Une fois le tout mélangé, elle a tiré des fils. L'un s'appelle PROJET KORKOL et fait danser petits et grands dans un spectacle de bal et de boum. L'autre c'est LA POESIE DES VIVANTS et ses spectacles intimistes où l'on parle des tripes, des larmes et de la terre. Puis il y a INIZI, la dj volcanique qui retourne les dancefloors et les cœur. Et enfin : LES ATELIERS, où l'on apprend à danser avec l'autre pour faire un peu plus la paix avec soi.
+                </p>
+                <p class="brand-font text-xl md:text-2xl font-semibold text-neutral-100 leading-snug text-justify">
+                    L'Archipel ENEZEG se promène partout en France, sur les festivals, dans les guinguettes, sous les cieux étoilés et chez toi, parfois. Il essaime ici et là son amour de la danse et de l'Autre car finalement, c'est pour ça qu'il existe : DANSER… et FAIRE DANSER.
+                </p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6"><div class="flex overflow-x-auto gap-6 pb-8 scrollbar-hide snap-x snap-mandatory">
+            <a href="projet-korkol.html" class="min-w-[280px] md:min-w-[320px] aspect-[4/5] relative rounded-3xl overflow-hidden group snap-center cursor-pointer block flex-shrink-0 transition-all duration-300">
+                <img src="images/Projet Korkol.jpg" alt="Projet Korkol" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <span class="absolute left-0 top-0 bottom-0 w-1 bg-pink-500 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_#ec4899,0_0_30px_#ec4899] transition-opacity duration-300"></span>
+                <span class="absolute right-0 top-0 bottom-0 w-1 bg-pink-500 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_#ec4899,0_0_30px_#ec4899] transition-opacity duration-300"></span>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="h-8 text-base md:text-lg font-bold tracking-tight text-white leading-8 whitespace-nowrap">PROJET KORKOL</h3>
+                    <p class="text-sm text-neutral-300 min-h-10 line-clamp-2">des spectacles de bal où l'on parle de boum. Ou l'inverse.</p>
+                </div>
+            </a>
+            <a href="la-poesie-des-vivants.html" class="min-w-[280px] md:min-w-[320px] aspect-[4/5] relative rounded-3xl overflow-hidden group snap-center cursor-pointer block flex-shrink-0 transition-all duration-300">
+                <img src="images/La Poésie des vivants.jpg" alt="La Poésie des Vivants" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <span class="absolute left-0 top-0 bottom-0 w-1 bg-pink-500 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_#ec4899,0_0_30px_#ec4899] transition-opacity duration-300"></span>
+                <span class="absolute right-0 top-0 bottom-0 w-1 bg-pink-500 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_#ec4899,0_0_30px_#ec4899] transition-opacity duration-300"></span>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="h-8 text-base md:text-lg font-bold tracking-tight text-white leading-8 whitespace-nowrap">LA POÉSIE DES VIVANTS</h3>
+                    <p class="text-sm text-neutral-300 min-h-10 line-clamp-2">plumes et corps sensible : spectacles et ateliers d'écriture dansée.</p>
+                </div>
+            </a>
+            <a href="inizi.html" class="min-w-[280px] md:min-w-[320px] aspect-[4/5] relative rounded-3xl overflow-hidden group snap-center cursor-pointer block flex-shrink-0 transition-all duration-300">
+                <img src="images/Inizi.jpg" alt="INIZI" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <span class="absolute left-0 top-0 bottom-0 w-1 bg-pink-500 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_#ec4899,0_0_30px_#ec4899] transition-opacity duration-300"></span>
+                <span class="absolute right-0 top-0 bottom-0 w-1 bg-pink-500 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_#ec4899,0_0_30px_#ec4899] transition-opacity duration-300"></span>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="h-8 text-base md:text-lg font-bold tracking-tight text-white leading-8 whitespace-nowrap">INIZI</h3>
+                    <p class="text-sm text-neutral-300 min-h-10 line-clamp-2">dj set ou bal électro folk ?</p>
+                </div>
+            </a>
+            <a href="ateliers.html" class="min-w-[280px] md:min-w-[320px] aspect-[4/5] relative rounded-3xl overflow-hidden group snap-center cursor-pointer block flex-shrink-0 transition-all duration-300">
+                <img src="images/Les Ateliers.jpg" alt="Les Ateliers" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <span class="absolute left-0 top-0 bottom-0 w-1 bg-pink-500 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_#ec4899,0_0_30px_#ec4899] transition-opacity duration-300"></span>
+                <span class="absolute right-0 top-0 bottom-0 w-1 bg-pink-500 opacity-0 group-hover:opacity-100 shadow-[0_0_15px_#ec4899,0_0_30px_#ec4899] transition-opacity duration-300"></span>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 class="h-8 text-base md:text-lg font-bold tracking-tight text-white leading-8 whitespace-nowrap">LES ATELIERS</h3>
+                    <p class="text-sm text-neutral-300 min-h-10 line-clamp-2">mets du bal dans ta vie bb !</p>
+                </div>
+            </a>
+        </div></div>
+    </section>
+
+    <!-- Événements -->
+    <section id="evenements" class="py-24 bg-neutral-900/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-12">ÉVÉNEMENTS À VENIR</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div class="space-y-4">
+                    <a href="https://www.helloasso.com/associations/vertical-systemes/evenements/viens-on-s-em-a-la-rentree?utm_source=app_ha&utm_campaign=share_campaign_button&utm_medium=ios&fbclid=IwY2xjawTgEOhleHRuA2FlbQIxMABzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEe8ibul01VF8-nuNX4nK7XrNroH3cLbueMQ3fjmiJItRDNhi_9EkcGkvh_TeY_aem_zq0ehTgGiIpUeF5lHDMGxw" target="_blank" class="block p-4 rounded-xl border border-white/10 bg-neutral-950/50 backdrop-blur-md hover:border-pink-500/30 hover:bg-pink-500/5 transition-colors">
+                        <p class="text-base leading-relaxed"><span class="font-semibold text-pink-400">05 septembre 2026</span> : Inizi - Kleub Folk - Viens on s'em - Dordogne (24)</p>
+                    </a>
+                    <a href="https://www.facebook.com/events/s/la-cabriole-fest-2/963235269850437/" target="_blank" class="block p-4 rounded-xl border border-white/10 bg-neutral-950/50 backdrop-blur-md hover:border-pink-500/30 hover:bg-pink-500/5 transition-colors">
+                        <p class="text-base leading-relaxed"><span class="font-semibold text-pink-400">12 septembre 2026</span> : Inizi - Kleub Folk - La Cabriole Fest' 2 - Rontalon (69)</p>
+                    </a>
+                    <a href="https://www.helloasso.com/associations/compagnie-enezeg/evenements/le-lab-folk-stage-d-initiation-aux-danses-traditionnelles-de-groupe" target="_blank" class="block p-4 rounded-xl border border-white/10 bg-neutral-950/50 backdrop-blur-md hover:border-pink-500/30 hover:bg-pink-500/5 transition-colors">
+                        <p class="text-base leading-relaxed"><span class="font-semibold text-pink-400">26 - 27 septembre 2026</span> : Atelier - initiation aux danses traditionnelles de groupe - Grenoble (38)</p>
+                    </a>
+                    <a href="https://espace-julien.com/agenda/deambulation-teknibal" target="_blank" class="block p-4 rounded-xl border border-white/10 bg-neutral-950/50 backdrop-blur-md hover:border-pink-500/30 hover:bg-pink-500/5 transition-colors">
+                        <p class="text-base leading-relaxed"><span class="font-semibold text-pink-400">3 octobre 2026</span> : Atelier - initiation bal folk - Teknibal - Espace Julien - Marseille (13)</p>
+                    </a>
+                    <div class="p-4 rounded-xl border border-white/10 bg-neutral-950/50 backdrop-blur-md">
+                        <p class="text-base leading-relaxed"><span class="font-semibold text-pink-400">10 octobre 2026</span> : Atelier - initiation bal folk - Teknibal - Le Point Fort Aubervilliers (93)</p>
+                    </div>
+                    <a href="https://www.helloasso.com/associations/compagnie-enezeg/evenements/le-lab-folk-stage-debutant-danses-a-deux-appliquees-au-folk" target="_blank" class="block p-4 rounded-xl border border-white/10 bg-neutral-950/50 backdrop-blur-md hover:border-pink-500/30 hover:bg-pink-500/5 transition-colors">
+                        <p class="text-base leading-relaxed"><span class="font-semibold text-pink-400">17 - 18 octobre 2026</span> : Atelier - stage danse à deux débutant - Grenoble (38)</p>
+                    </a>
+                    <a href="https://paul-b.fr/evenements/teknibal-la-cigue-cocanha-inizi-cie-enezeg/" target="_blank" class="block p-4 rounded-xl border border-white/10 bg-neutral-950/50 backdrop-blur-md hover:border-pink-500/30 hover:bg-pink-500/5 transition-colors">
+                        <p class="text-base leading-relaxed"><span class="font-semibold text-pink-400">24 avril 2027</span> : Atelier & Inizi - Kleub Folk - Teknibal - Massy (91)</p>
+                    </a>
+                </div>
+                <div id="carte-evenements" class="rounded-2xl border border-white/10 bg-neutral-950/50 backdrop-blur-md overflow-hidden min-h-[400px]"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-10">GALERIE</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+                <figure>
+                    <button onclick="openLightbox(this)" data-caption="Inizi — Résilience Festival 2026 — © Justin O." class="aspect-square w-full rounded-2xl overflow-hidden group cursor-zoom-in block"><img src="images/Inizi - Résilience Festival 2026 - Justin O..jpg" alt="Inizi — Résilience Festival 2026" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></button>
+                </figure>
+                <figure>
+                    <button onclick="openLightbox(this)" data-caption="Inizi — Hadra Trance Festival 2025 — © Julia Poletto" class="aspect-square w-full rounded-2xl overflow-hidden group cursor-zoom-in block"><img src="images/Inizi - Hadra Trance Festival 2025 - Julia Poletto.jpg" alt="Inizi — Hadra Trance Festival 2025" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></button>
+                </figure>
+                <figure>
+                    <button onclick="openLightbox(this)" data-caption="Inizi — Hadra Trance Festival 2025 — © Julia Poletto" class="aspect-square w-full rounded-2xl overflow-hidden group cursor-zoom-in block"><img src="images/Inizi - Hadra Trance Festival 2025 - Julia Poletto (2).jpg" alt="Inizi — Hadra Trance Festival 2025" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></button>
+                </figure>
+                <figure>
+                    <button onclick="openLightbox(this)" data-caption="Inizi — Gros Bal du Vercors 2025 — © Lul'" class="aspect-square w-full rounded-2xl overflow-hidden group cursor-zoom-in block"><img src="images/Inizi - Gros Bal du Vercors 2025 - Lul'.JPG" alt="Inizi — Gros Bal du Vercors 2025" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></button>
+                </figure>
+                <figure>
+                    <button onclick="openLightbox(this)" data-caption="Inizi — Gros Bal du Vercors 2025 — © Lul'" class="aspect-square w-full rounded-2xl overflow-hidden group cursor-zoom-in block"><img src="images/Inizi - Gros Bal du Vercors 2025 - Lul' (2).JPG" alt="Inizi — Gros Bal du Vercors 2025" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></button>
+                </figure>
+                <figure>
+                    <button onclick="openLightbox(this)" data-caption="Initiation — Résilience Festival 2026 — © Justin O." class="aspect-square w-full rounded-2xl overflow-hidden group cursor-zoom-in block"><img src="images/Initiation - Résilience Festival 2026 - Justin O..jpg" alt="Initiation — Résilience Festival 2026" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></button>
+                </figure>
+                <figure>
+                    <button onclick="openLightbox(this)" data-caption="D.CAD — © Colas Lemaire" class="aspect-square w-full rounded-2xl overflow-hidden group cursor-zoom-in block"><img src="images/D.CAD - Colas Lemaire.jpg" alt="D.CAD" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></button>
+                </figure>
+                <figure>
+                    <button onclick="openLightbox(this)" data-caption="Bloom — © Hosanna Gartner" class="aspect-square w-full rounded-2xl overflow-hidden group cursor-zoom-in block"><img src="images/Bloom - Hosanna Gartner.jpeg" alt="Bloom" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></button>
+                </figure>
+                <figure>
+                    <button onclick="openLightbox(this)" data-caption="Bloom — © Hosanna Gartner" class="aspect-square w-full rounded-2xl overflow-hidden group cursor-zoom-in block"><img src="images/Bloom - Hosanna Gartner (2).jpeg" alt="Bloom" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></button>
+                </figure>
+                <figure>
+                    <button onclick="openLightbox(this)" data-caption="Atelier — Bal Tempête 2026" class="aspect-square w-full rounded-2xl overflow-hidden group cursor-zoom-in block"><img src="images/Atelier - Bal Tempête 2026 -.jpg" alt="Atelier — Bal Tempête 2026" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></button>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 p-4 md:p-10">
+        <button onclick="closeLightbox()" class="absolute top-5 right-6 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+            <iconify-icon icon="solar:close-circle-linear" class="text-3xl"></iconify-icon>
+        </button>
+        <figure class="max-w-5xl w-full text-center">
+            <img id="lightbox-img" src="" alt="" class="mx-auto max-h-[80vh] w-auto object-contain rounded-xl">
+            <figcaption id="lightbox-caption" class="mt-4 text-sm text-neutral-300"></figcaption>
+        </figure>
+    </div>
+
+        <!-- Footer -->
+    <footer class="border-t border-white/10 bg-neutral-950 py-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-neutral-400">
+                &copy; 2026 Compagnie ENEZEG
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/cie_enezeg/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="mdi:instagram" class="text-xl"></iconify-icon>
+                </a>
+                <a href="https://www.facebook.com/cie.enezeg/?locale=fr_FR" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="mdi:facebook" class="text-xl"></iconify-icon>
+                </a>
+                <a href="mailto:cie.enezeg@gmail.com" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="solar:letter-linear" class="text-xl"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script>
+      const evenements = [
+        {
+          titre: "Inizi - Kleub Folk",
+          lieu: "Viens on s'em - Dordogne (24)",
+          lat: 45.15, lng: 0.75,
+          date: "2026-09-05",
+          heure: "20:00",
+          type: "inizi",
+          lien: "https://www.helloasso.com/associations/vertical-systemes/evenements/viens-on-s-em-a-la-rentree"
+        },
+        {
+          titre: "Inizi - Kleub Folk",
+          lieu: "La Cabriole Fest' 2 - Rontalon (69)",
+          lat: 45.66, lng: 4.63,
+          date: "2026-09-12",
+          heure: "20:00",
+          type: "inizi",
+          lien: "https://www.facebook.com/events/s/la-cabriole-fest-2/963235269850437/"
+        },
+        {
+          titre: "Grenoble — 2 stages",
+          lieu: "Grenoble (38)",
+          lat: 45.19, lng: 5.72,
+          date: "2026-09-26",
+          heure: "",
+          type: "atelier",
+          lien: "",
+          evenements: [
+            {
+              titre: "Stage initiation danses traditionnelles de groupe",
+              date: "2026-09-26",
+              heure: "10:00",
+              lien: "https://www.helloasso.com/associations/compagnie-enezeg/evenements/le-lab-folk-stage-d-initiation-aux-danses-traditionnelles-de-groupe"
+            },
+            {
+              titre: "Stage danse à deux débutant",
+              date: "2026-10-17",
+              heure: "10:00",
+              lien: "https://www.helloasso.com/associations/compagnie-enezeg/evenements/le-lab-folk-stage-debutant-danses-a-deux-appliquees-au-folk"
+            }
+          ]
+        },
+        {
+          titre: "Atelier - Initiation bal folk",
+          lieu: "Teknibal - Espace Julien - Marseille (13)",
+          lat: 43.30, lng: 5.37,
+          date: "2026-10-03",
+          heure: "18:00",
+          type: "atelier",
+          lien: "https://espace-julien.com/agenda/deambulation-teknibal"
+        },
+        {
+          titre: "Atelier - Initiation bal folk",
+          lieu: "Teknibal - Le Point Fort - Aubervilliers (93)",
+          lat: 48.91, lng: 2.38,
+          date: "2026-10-10",
+          heure: "18:00",
+          type: "atelier",
+          lien: ""
+        },
+        {
+          titre: "Atelier & Inizi - Kleub Folk",
+          lieu: "Teknibal - Massy (91)",
+          lat: 48.73, lng: 2.27,
+          date: "2027-04-24",
+          heure: "18:00",
+          type: "inizi",
+          lien: "https://paul-b.fr/evenements/teknibal-la-cigue-cocanha-inizi-cie-enezeg/"
+        }
+      ];
+
+      const map = L.map('carte-evenements', {
+        scrollWheelZoom: false,
+        zoomControl: true
+      }).setView([46.5, 2.5], 5);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> | <a href="https://openstreetmap.fr">OSM France</a>',
+        maxZoom: 18
+      }).addTo(map);
+
+      const couleurs = {
+        inizi: '#ec4899',
+        atelier: '#a855f7',
+        'kleub-folk': '#f97316'
+      };
+
+      function icone(type) {
+        const c = couleurs[type] || '#e11d48';
+        return L.divIcon({
+          html: `<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="${c}" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21s-8-5.5-8-11a8 8 0 1 1 16 0c0 5.5-8 11-8 11z"/></svg>`,
+          className: '',
+          iconSize: [28, 36],
+          iconAnchor: [14, 36]
+        });
+      }
+
+      evenements.forEach(e => {
+        const marker = L.marker([e.lat, e.lng], { icon: icone(e.type) }).addTo(map);
+
+        let popupContent = '';
+
+        if (e.evenements) {
+          popupContent = `<div style="font-family:'Inter',sans-serif;color:#fff;max-width:260px;background:rgba(23,23,23,0.85);border-radius:12px;padding:12px;border:1px solid #262626">
+            <strong style="font-size:1.1em;color:#ec4899;">${e.titre}</strong><br/>
+            <span style="color:#737373;font-size:0.9em;">${e.lieu}</span>`;
+
+          e.evenements.forEach(sub => {
+            const dateFr = new Date(sub.date + 'T' + (sub.heure || '00:00')).toLocaleDateString('fr-FR', {
+              weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+            });
+            popupContent += `<div style="margin-top:8px;padding-top:6px;border-top:1px solid #262626">
+              <span style="color:#a3a3a3;font-size:0.85em;">${dateFr}${sub.heure ? ' à ' + sub.heure : ''}</span><br/>
+              <span style="color:#d4d4d4;">${sub.titre}</span>`;
+            if (sub.lien) {
+              popupContent += `<br/><a href="${sub.lien}" target="_blank" style="color:#a855f7;font-size:0.8em;">Plus d'infos &rarr;</a>`;
+            }
+            popupContent += '</div>';
+          });
+
+          popupContent += '</div>';
+        } else {
+          const dateFr = new Date(e.date + 'T' + (e.heure || '00:00')).toLocaleDateString('fr-FR', {
+            weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+          });
+
+          popupContent = `<div style="font-family:'Inter',sans-serif;color:#fff;max-width:220px;background:rgba(23,23,23,0.85);border-radius:12px;padding:12px;border:1px solid #262626">
+            <strong style="font-size:1.1em;color:#ec4899;">${e.titre}</strong><br/>
+            <span style="color:#a3a3a3;">${dateFr}${e.heure ? ' à ' + e.heure : ''}</span><br/>
+            <span style="color:#737373;font-size:0.9em;">${e.lieu}</span>`;
+
+          if (e.lien) {
+            popupContent += `<br/><a href="${e.lien}" target="_blank" style="color:#a855f7;font-size:0.9em;">Plus d'infos &rarr;</a>`;
+          }
+
+          popupContent += '</div>';
+        }
+
+        marker.bindPopup(popupContent);
+      });
+
+      map.scrollWheelZoom.enable();
+    </script>
+
+</body>
+</html>

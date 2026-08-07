@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projet Korkol — ENEZEG</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #050505;
+color: #ffffff;
+}
+h1, h2, h3, h4, .brand-font {
+font-family: 'Syne', sans-serif;
+}
+.text-glow {
+text-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+}
+.neon-border {
+box-shadow: 0 0 10px rgba(236, 72, 153, 0.2), inset 0 0 10px rgba(236, 72, 153, 0.1);
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+@keyframes marquee {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+display: inline-flex;
+animation: marquee 20s linear infinite;
+}
+input[type="email"], input[type="text"] {
+background: rgba(255,255,255,0.05);
+border: 1px solid rgba(255,255,255,0.1);
+color: white;
+outline: none;
+}
+input[type="email"]:focus, input[type="text"]:focus {
+                border-color: #ec4899;
+                box-shadow: 0 0 0 1px #ec4899;
+            }
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+            </style>
+</head>
+<body class="antialiased selection:bg-pink-500 selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 left-0 border-b border-white/10 bg-black/60 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="brand-font text-2xl font-bold tracking-tighter text-white">
+                ENEZEG
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-300">
+                <div class="relative dropdown">
+                    <a href="index.html#archipel" class="hover:text-white transition-colors flex items-center gap-1">
+                        L'Archipel
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="text-xs"></iconify-icon>
+                    </a>
+                    <div class="dropdown-menu absolute top-full left-0 pt-2 w-60 hidden">
+                        <div class="bg-neutral-900 border border-white/10 rounded-xl backdrop-blur-xl shadow-xl overflow-hidden">
+                            <a href="projet-korkol.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors">Projet Korkol</a>
+                            <a href="la-poesie-des-vivants.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">La Poésie des Vivants</a>
+                            <a href="inizi.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">INIZI</a>
+                            <a href="ateliers.html" class="block px-5 py-3.5 text-sm uppercase tracking-wide text-neutral-300 hover:text-white hover:bg-pink-500/10 transition-colors border-t border-white/5">Les Ateliers</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#galerie" class="hover:text-white transition-colors">Galerie</a>
+                <a href="index.html#evenements" class="hover:text-white transition-colors">Événements</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <a href="https://www.helloasso.com/associations/compagnie-enezeg/formulaires/2" target="_blank" class="bg-pink-500 text-black text-xs font-semibold py-2 px-4 rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2">
+                <iconify-icon icon="solar:heart-linear" class="text-base"></iconify-icon>
+                Faire un don
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/VIGNETTE.jpg" alt="Projet Korkol" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-[#050505]/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-pink-900/30 to-purple-900/30 mix-blend-overlay"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 mt-16">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400">Projet Korkol</h1>
+            <p class="brand-font text-xl md:text-2xl font-semibold text-neutral-100 leading-snug max-w-2xl mx-auto">Spectacles pour danseur.euses enflammé.e.s</p>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section id="projet" class="max-w-4xl mx-auto px-6 py-24">
+        <div class="bg-gradient-to-br from-pink-950/40 via-neutral-950/80 to-purple-950/40 border border-pink-500/20 rounded-2xl p-6 md:p-8 text-xl md:text-2xl leading-relaxed text-neutral-100 text-center brand-font font-semibold">
+            <p>Rassembler : maître-mot du Projet Korkol.<br>
+                Faire corps commun, corps collectif.<br>
+                Être ensemble pour la danse, par la danse.<br>
+                Se retrouver.<br>
+                Sur un cercle pour danser.<br>
+                Se prendre la main, avoir confiance.<br>
+                Rire.<br>
+                Transpirer.<br>
+                Échanger.<br>
+                Rire encore.<br>
+                Se serrer les uns contre les autres.<br>
+                Être un peu l'autre.<br>
+                Se rencontrer.<br>
+                Dans la rue, dans la fête, dans le bal.<br>
+                Se rencontrer.<br>
+                Encore et en corps.</p>
+        </div>
+    </section>
+
+    <!-- Création -->
+    <section class="max-w-4xl mx-auto px-6 pb-20">
+        <h2 class="brand-font text-4xl md:text-5xl font-bold text-purple-400 mb-10">CREATION(S)</h2>
+
+        <div class="text-xl md:text-2xl leading-snug space-y-4 brand-font font-semibold">
+            <h3 class="brand-font text-3xl md:text-4xl font-bold text-pink-400">Etat de Fête</h3>
+            <p class="text-purple-400 italic text-lg md:text-xl">de 45 minutes… à 2h — 5 danseur.euses - 1 dj - 1 public</p>
+
+            <div class="relative rounded-2xl overflow-hidden">
+                <img src="images/PK - 1.jpg" alt="Projet Korkol — État de fête" class="w-full h-48 md:h-64 object-cover">
+                <div class="absolute inset-0 bg-pink-600/20 mix-blend-overlay"></div>
+            </div>
+
+            <p class="text-justify text-neutral-300 pt-4">
+                État de fête est une pièce chorégraphique en deux temps : une boum performative suivie d'un bal
+                participatif. 5 danseur·euses, 1 DJ, 1 public. Inspiré à la fois du club techno, de la boum et du
+                bal folk, le spectacle explore ce qui nous relie lorsque nous dansons en groupe.
+            </p>
+            <p class="text-justify text-neutral-300">
+                Dans un premier temps, les interprètes déploient une chorégraphie organique et métissée imaginée
+                par Mélisande Pommier-Ferri, mêlant danses traditionnelles, énergie des clubs et danse
+                contemporaine. Violon et platines dialoguent, les gestes se répètent, les corps s'accordent. Des
+                témoignages collectés en amont, auprès de personnes de tous horizons, traversent la bande-son et
+                ancrent la pièce dans une mémoire sensible de la fête.
+            </p>
+            <p class="text-justify text-neutral-300">
+                Puis la frontière s'efface : le public est invité à rejoindre la piste pour un néo-bal-boum guidé
+                par les artistes. De la valse à la macarena, du cercle circassien à la bourrée, chacun·e entre dans
+                la danse, sans prérequis. Pensé pour l'espace public et les festivals, État de fête transforme places
+                et parvis en terrain de rencontre et de célébration. Une invitation simple et essentielle : se
+                retrouver et faire communauté, encore et en corps.
+            </p>
+
+            <!-- Vidéo -->
+            <div class="pt-6 flex justify-center">
+                <div class="w-full max-w-2xl aspect-video rounded-2xl overflow-hidden border border-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.15)]">
+                    <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/dV4-PAZb9Zo" title="Projet Korkol — État de fête" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+
+            <!-- Calendrier -->
+            <div class="pt-6">
+                <div class="bg-gradient-to-br from-pink-950/40 via-neutral-950/80 to-purple-950/40 border border-pink-500/20 rounded-2xl p-8 md:p-10">
+                    <h4 class="brand-font text-xl font-bold text-pink-400 mb-3">Calendrier</h4>
+                    <ul class="text-base text-neutral-400 space-y-1">
+                        <li><span class="font-semibold text-neutral-200">6 - 9 avril 2026</span> · 1ère résidence au Cap Berriat - Grenoble</li>
+                        <li><span class="font-semibold text-neutral-200">25 avril 2026</span> · Sortie de résidence à Funambal - Rillieux-la-Pape</li>
+                        <li><span class="font-semibold text-neutral-200">Octobre 2026</span> · Deuxième résidence (en cours)</li>
+                        <li><span class="font-semibold text-neutral-200">Mars 2027</span> · Troisième résidence (en cours)</li>
+                        <li><span class="font-semibold text-neutral-200">Avril 2027</span> · Première à Festiv'Arts - Grenoble</li>
+                        <li><span class="font-semibold text-neutral-200">Mai 2027</span> · Tournée nationale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Actions culturelles -->
+            <div class="pt-4">
+                <div class="bg-gradient-to-br from-pink-950/40 via-neutral-950/80 to-purple-950/40 border border-pink-500/20 rounded-2xl p-8 md:p-10 space-y-6">
+                    <div>
+                        <h4 class="brand-font text-xl font-bold text-pink-400 mb-3">Actions culturelles</h4>
+                        <p class="text-base text-neutral-300">
+                            En parallèle de la pièce &laquo; Etat de Fête &raquo;, nous proposons des ateliers, modulables
+                            selon les besoins et publics des structures faisant appel à nous, pour répandre toujours plus
+                            de groove.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 text-base">
+                        <p class="font-semibold text-pink-300">Côté bal</p>
+                        <ul class="space-y-1 text-neutral-400">
+                            <li>— Initiations bal folk (1h15)</li>
+                            <li>— Atelier bal folk (3h à plusieurs jours)</li>
+                            <li>— Organisation de bal électro-folk</li>
+                        </ul>
+                        <p class="font-semibold text-pink-300 pt-2">Côté club</p>
+                        <ul class="space-y-1 text-neutral-400">
+                            <li>— Atelier danse contemporaine (2h à plusieurs jours)</li>
+                            <li>— Atelier chorégraphique (3h+)</li>
+                            <li>— Organisation de boum</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p class="pt-4">
+                <a href="../contenu/Projet Korkol/ENEZEG - Projet Korkol - Présentation ETAT DE FETE_.pdf" target="_blank" class="text-pink-400 hover:text-pink-300 hover:underline transition-colors font-medium uppercase tracking-wider">
+                    &raquo; télécharger le dossier &laquo;
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Section: Contact -->
+    <section class="relative h-[50vh] min-h-[400px] w-full overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="images/VIGNETTE.jpg" alt="Projet Korkol" class="w-full h-full object-cover object-center opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-[#050505]/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-pink-900/30 to-purple-900/30 mix-blend-overlay"></div>
+        </div>
+        <div class="relative z-10 text-center px-6">
+            <h2 class="brand-font text-4xl md:text-6xl font-bold text-white mb-8">Programmer le Projet Korkol</h2>
+            <a href="mailto:cie.enezeg@gmail.com" class="inline-flex items-center gap-2 px-8 py-4 bg-pink-600 text-white font-semibold rounded-full hover:bg-pink-500 transition-colors hover:shadow-[0_0_40px_rgba(236,72,153,0.6)]">
+                <iconify-icon icon="solar:letter-linear" class="text-xl"></iconify-icon>
+                cie.enezeg@gmail.com
+            </a>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer class="border-t border-white/10 bg-neutral-950 py-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-sm text-neutral-400">
+                &copy; 2026 Compagnie ENEZEG
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/cie_enezeg/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="mdi:instagram" class="text-xl"></iconify-icon>
+                </a>
+                <a href="https://www.facebook.com/cie.enezeg/?locale=fr_FR" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="mdi:facebook" class="text-xl"></iconify-icon>
+                </a>
+                <a href="mailto:cie.enezeg@gmail.com" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                    <iconify-icon icon="solar:letter-linear" class="text-xl"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
