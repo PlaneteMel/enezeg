@@ -56,12 +56,32 @@ text-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
                 <a href="index.html#evenements" class="hover:text-white transition-colors">Événements</a>
                 <a href="contact.html" class="text-white transition-colors">Contact</a>
             </div>
-            <a href="https://www.helloasso.com/associations/compagnie-enezeg/formulaires/2" target="_blank" class="bg-pink-500 text-black text-xs font-semibold py-2 px-4 rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2">
-                <iconify-icon icon="solar:heart-linear" class="text-base"></iconify-icon>
-                Faire un don
-            </a>
+            <div class="flex items-center gap-3">
+                <button id="burger-btn" aria-label="Menu" aria-expanded="false" class="md:hidden text-white hover:text-pink-400 transition-colors w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 bg-white/5">
+                    <iconify-icon id="burger-icon" icon="solar:hamburger-menu-linear" class="text-2xl"></iconify-icon>
+                </button>
+                <a href="https://www.helloasso.com/associations/compagnie-enezeg/formulaires/2" target="_blank" class="bg-pink-500 text-black text-xs font-semibold py-2 px-4 rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2">
+                    <iconify-icon icon="solar:heart-linear" class="text-base"></iconify-icon>
+                    Faire un don
+                </a>
+            </div>
         </div>
     </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full z-40 bg-neutral-950/95 backdrop-blur-xl border-b border-white/10 md:hidden">
+        <div class="px-6 py-4 space-y-1">
+            <p class="text-xs uppercase tracking-widest text-pink-400 font-semibold px-3 pt-2 pb-1">L'Archipel</p>
+            <a href="projet-korkol.html" class="mobile-link block px-3 py-3 text-base text-neutral-300 hover:text-white hover:bg-pink-500/10 rounded-lg transition-colors">Projet Korkol</a>
+            <a href="la-poesie-des-vivants.html" class="mobile-link block px-3 py-3 text-base text-neutral-300 hover:text-white hover:bg-pink-500/10 rounded-lg transition-colors">La Poésie des Vivants</a>
+            <a href="inizi.html" class="mobile-link block px-3 py-3 text-base text-neutral-300 hover:text-white hover:bg-pink-500/10 rounded-lg transition-colors">INIZI</a>
+            <a href="ateliers.html" class="mobile-link block px-3 py-3 text-base text-neutral-300 hover:text-white hover:bg-pink-500/10 rounded-lg transition-colors">Les Ateliers</a>
+            <div class="border-t border-white/10 my-2"></div>
+            <a href="index.html#galerie" class="mobile-link block px-3 py-3 text-base text-neutral-300 hover:text-white hover:bg-pink-500/10 rounded-lg transition-colors">Galerie</a>
+            <a href="index.html#evenements" class="mobile-link block px-3 py-3 text-base text-neutral-300 hover:text-white hover:bg-pink-500/10 rounded-lg transition-colors">Événements</a>
+            <a href="contact.html" class="mobile-link block px-3 py-3 text-base text-neutral-300 hover:text-white hover:bg-pink-500/10 rounded-lg transition-colors">Contact</a>
+        </div>
+    </div>
 
     <!-- Hero -->
     <section class="relative h-[60vh] min-h-[400px] w-full overflow-hidden flex items-center justify-center">
@@ -193,6 +213,27 @@ text-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
             </div>
         </div>
     </footer>
+
+    <script>
+        const burgerBtn = document.getElementById('burger-btn');
+        const burgerIcon = document.getElementById('burger-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        burgerBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            burgerBtn.setAttribute('aria-expanded', String(!isOpen));
+            burgerIcon.setAttribute('icon', isOpen ? 'solar:hamburger-menu-linear' : 'solar:close-circle-linear');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                burgerBtn.setAttribute('aria-expanded', 'false');
+                burgerIcon.setAttribute('icon', 'solar:hamburger-menu-linear');
+            });
+        });
+    </script>
 
 </body>
 </html>
